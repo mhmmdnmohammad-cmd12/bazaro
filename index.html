@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Bazaro</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,17 +20,18 @@
         }
 
         body {
-            background-color: #f5f5f5;
+            background: #f5f5f5;
             color: #222;
         }
 
-        /* الهيدر */
         header {
-            background-color: white;
+            background: white;
             padding: 18px 25px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
@@ -42,18 +49,23 @@
         nav a {
             text-decoration: none;
             color: #333;
-            font-size: 16px;
         }
 
         nav a:hover {
             color: #2563eb;
         }
 
-        /* الواجهة الرئيسية */
         .hero {
             text-align: center;
             padding: 70px 20px;
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #60a5fa
+                );
+
             color: white;
         }
 
@@ -70,14 +82,17 @@
         .search {
             width: 90%;
             max-width: 600px;
+
             padding: 15px;
+
             border: none;
             border-radius: 10px;
+
             font-size: 16px;
+
             outline: none;
         }
 
-        /* الأقسام */
         .categories {
             padding: 40px 20px;
             text-align: center;
@@ -89,362 +104,635 @@
         }
 
         .category-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+
             max-width: 1100px;
+
             margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
         }
 
         .category {
+
             background: white;
+
             padding: 25px 15px;
+
             border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.1);
+
+            text-decoration: none;
+
+            color: inherit;
+
+            display: block;
+
             transition: 0.3s;
+
+            cursor: pointer;
         }
 
         .category:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 6px 15px rgba(0,0,0,0.15);
         }
 
         .category-icon {
-            font-size: 40px;
+
+            font-size: 42px;
+
             margin-bottom: 10px;
         }
 
         .category h3 {
-            margin-bottom: 15px;
+
             font-size: 19px;
+
+            margin-bottom: 15px;
         }
 
-        /* ON / OFF */
         .status {
+
             display: inline-block;
-            padding: 6px 14px;
+
+            padding: 6px 15px;
+
             border-radius: 20px;
+
             font-size: 13px;
+
             font-weight: bold;
         }
 
         .on {
-            background-color: #dcfce7;
+
+            background: #dcfce7;
+
             color: #15803d;
         }
 
         .off {
-            background-color: #fee2e2;
+
+            background: #fee2e2;
+
             color: #b91c1c;
         }
 
-        /* الأقسام الفرعية */
+        .loading {
+
+            background: #f3f4f6;
+
+            color: #666;
+        }
+
         .subcategories {
+
             display: flex;
+
             justify-content: center;
-            gap: 8px;
+
             flex-wrap: wrap;
+
+            gap: 8px;
+
             margin-top: 15px;
         }
 
         .subcategory {
+
             background: #f3f4f6;
+
             padding: 8px 12px;
+
             border-radius: 8px;
+
             font-size: 13px;
         }
 
-        /* الفوتر */
-        footer {
-            margin-top: 40px;
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        /* الموبايل */
         @media (max-width: 700px) {
 
             header {
+
                 flex-direction: column;
+
                 gap: 15px;
+
                 padding: 15px;
             }
 
+            .logo {
+
+                font-size: 25px;
+            }
+
             nav {
+
                 gap: 12px;
-                justify-content: center;
+
                 flex-wrap: wrap;
+
+                justify-content: center;
             }
 
             nav a {
+
                 font-size: 14px;
             }
 
             .hero {
+
                 padding: 50px 15px;
             }
 
             .hero h1 {
+
                 font-size: 30px;
             }
 
             .hero p {
+
                 font-size: 17px;
+
                 line-height: 1.6;
             }
 
             .search {
+
                 width: 100%;
             }
 
             .categories {
+
                 padding: 30px 12px;
             }
 
             .category-container {
-                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
                 gap: 12px;
             }
 
             .category {
+
                 padding: 20px 8px;
             }
 
             .category-icon {
+
                 font-size: 32px;
             }
 
             .category h3 {
+
                 font-size: 16px;
             }
 
             .subcategory {
+
                 font-size: 12px;
+
                 padding: 7px 8px;
             }
         }
 
-        /* الموبايلات الصغيرة */
         @media (max-width: 360px) {
 
             .category-container {
+
                 grid-template-columns: 1fr;
             }
-
-            .hero h1 {
-                font-size: 26px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- الهيدر -->
-    <header>
 
-        <div class="logo">
-            Bazaro
-        </div>
+<header>
 
-        <nav>
-            <a href="#">الرئيسية</a>
-            <a href="#">المتاجر</a>
-            <a href="#">تسجيل الدخول</a>
-        </nav>
+    <div class="logo">
+        Bazaro
+    </div>
 
-    </header>
+    <nav>
+
+        <a href="index.html">
+            الرئيسية
+        </a>
+
+        <a href="#">
+            المتاجر
+        </a>
+
+        <a href="#">
+            تسجيل الدخول
+        </a>
+
+    </nav>
+
+</header>
 
 
-    <!-- الواجهة الرئيسية -->
-    <section class="hero">
+<section class="hero">
 
-        <h1>مرحباً بك في Bazaro</h1>
+    <h1>
+        مرحباً بك في Bazaro
+    </h1>
 
-        <p>
-            منصتك للتسوق من المتاجر في دمشق
-        </p>
+    <p>
+        منصتك للتسوق من المتاجر في دمشق
+    </p>
 
-        <input
-            type="text"
-            class="search"
-            placeholder="ابحث عن منتج أو متجر..."
+    <input
+        type="text"
+        class="search"
+        placeholder="ابحث عن منتج أو متجر..."
+    >
+
+</section>
+
+
+<section class="categories">
+
+    <h2>
+        الأقسام
+    </h2>
+
+
+    <div class="category-container">
+
+
+        <!-- ألبسة رجالية -->
+
+        <div
+            class="category"
+            data-section="men"
+            data-link="men.html"
+            onclick="openSection(this)"
         >
 
-    </section>
-
-
-    <!-- الأقسام -->
-    <section class="categories">
-
-        <h2>الأقسام</h2>
-
-        <div class="category-container">
-
-
-            <!-- ألبسة رجالية -->
-            <div class="category">
-
-                <div class="category-icon">👔</div>
-
-                <h3>ألبسة رجالية</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
+            <div class="category-icon">
+                👔
             </div>
 
+            <h3>
+                ألبسة رجالية
+            </h3>
 
-            <!-- ألبسة نسائية -->
-            <div class="category">
-
-                <div class="category-icon">👗</div>
-
-                <h3>ألبسة نسائية</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
-            </div>
-
-
-            <!-- ألبسة رياضية -->
-            <div class="category">
-
-                <div class="category-icon">🏃</div>
-
-                <h3>ألبسة رياضية</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
-            </div>
-
-
-            <!-- مكياج -->
-            <div class="category">
-
-                <div class="category-icon">💄</div>
-
-                <h3>مكياج</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
-            </div>
-
-
-            <!-- إكسسوارات -->
-            <div class="category">
-
-                <div class="category-icon">💍</div>
-
-                <h3>إكسسوارات</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
-            </div>
-
-
-            <!-- الموبايلات -->
-            <div class="category">
-
-                <div class="category-icon">📱</div>
-
-                <h3>الموبايلات</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
-                <div class="subcategories">
-
-                    <div class="subcategory">
-                        📱 أجهزة الموبايل
-                    </div>
-
-                    <div class="subcategory">
-                        🔌 إكسسوارات الموبايل
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- اللابتوبات -->
-            <div class="category">
-
-                <div class="category-icon">💻</div>
-
-                <h3>اللابتوبات</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
-                <div class="subcategories">
-
-                    <div class="subcategory">
-                        💻 أجهزة اللابتوب
-                    </div>
-
-                    <div class="subcategory">
-                        🎒 إكسسوارات اللابتوب
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- عشوائي -->
-            <div class="category">
-
-                <div class="category-icon">🛍️</div>
-
-                <h3>عشوائي / بيع شخصي</h3>
-
-                <span class="status on">
-                    ON
-                </span>
-
-                <div class="subcategories">
-
-                    <div class="subcategory">
-                        أي شخص يستطيع نشر غرض للبيع
-                    </div>
-
-                </div>
-
-            </div>
-
+            <span class="status loading">
+                جاري التحميل...
+            </span>
 
         </div>
 
-    </section>
+
+        <!-- ألبسة نسائية -->
+
+        <div
+            class="category"
+            data-section="women"
+            data-link=""
+            onclick="openSection(this)"
+        >
+
+            <div class="category-icon">
+                👗
+            </div>
+
+            <h3>
+                ألبسة نسائية
+            </h3>
+
+            <span class="status loading">
+                جاري التحميل...
+            </span>
+
+        </div>
 
 
-    <!-- الفوتر -->
-    <footer>
+        <!-- ألبسة رياضية -->
 
-        <p>
-            © 2026 Bazaro - جميع الحقوق محفوظة
-        </p>
+        <div
+            class="category"
+            data-section="sports"
+            data-link=""
+            onclick="openSection(this)"
+        >
 
-    </footer>
+            <div class="category-icon">
+                🏃
+            </div>
+
+            <h3>
+                ألبسة رياضية
+            </h3>
+
+            <span class="status loading">
+                جاري التحميل...
+            </span>
+
+        </div>
+
+
+        <!-- مكياج -->
+
+        <div
+            class="category"
+            data-section="makeup"
+            data-link=""
+            onclick="openSection(this)"
+        >
+
+            <div class="category-icon">
+                💄
+            </div>
+
+            <h3>
+                مكياج
+            </h3>
+
+            <span class="status loading">
+                جاري التحميل...
+            </span>
+
+        </div>
+
+
+        <!-- إكسسوارات -->
+
+        <div
+            class="category"
+            data-section="accessories"
+            data-link=""
+            onclick="openSection(this)"
+        >
+
+            <div class="category-icon">
+                💍
+            </div>
+
+            <h3>
+                إكسسوارات
+            </h3>
+
+            <span class="status loading">
+                جاري التحميل...
+            </span>
+
+        </div>
+
+
+        <!-- الموبايلات -->
+
+        <div
+            class="category"
+            data-section="mobile"
+            data-link="mobiles.html"
+            onclick="openSection(this)"
+        >
+
+            <div class="category-icon">
+                📱
+            </div>
+
+            <h3>
+                الموبايلات
+            </h3>
+
+            <span class="status loading">
+                جاري التحميل...
+            </span>
+
+            <div class="subcategories">
+
+                <div class="subcategory">
+                    📱 أجهزة الموبايل
+                </div>
+
+                <div class="subcategory">
+                    🔌 إكسسوارات الموبايل
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- اللابتوبات -->
+
+        <div
+            class="category"
+            data-section="laptops"
+            data-link="laptops.html"
+            onclick="openSection(this)"
+        >
+
+            <div class="category-icon">
+                💻
+            </div>
+
+            <h3>
+                اللابتوبات
+            </h3>
+
+            <span class="status loading">
+                جاري التحميل...
+            </span>
+
+            <div class="subcategories">
+
+                <div class="subcategory">
+                    💻 أجهزة اللابتوب
+                </div>
+
+                <div class="subcategory">
+                    🎒 إكسسوارات اللابتوب
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<script>
+
+    const firebaseURL =
+        "https://bazaro-4f7d6-default-rtdb.europe-west1.firebasedatabase.app/sections.json";
+
+
+    fetch(firebaseURL)
+
+        .then(function(response) {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "HTTP " + response.status
+                );
+
+            }
+
+            return response.json();
+
+        })
+
+        .then(function(sections) {
+
+            const cards =
+                document.querySelectorAll(
+                    "[data-section]"
+                );
+
+
+            cards.forEach(function(card) {
+
+                const sectionName =
+                    card.getAttribute(
+                        "data-section"
+                    );
+
+                const status =
+                    card.querySelector(
+                        ".status"
+                    );
+
+
+                if (
+                    sections &&
+                    sections[sectionName] === true
+                ) {
+
+                    status.textContent =
+                        "ON";
+
+                    status.className =
+                        "status on";
+
+                    card.dataset.enabled =
+                        "true";
+
+                }
+
+                else {
+
+                    status.textContent =
+                        "OFF";
+
+                    status.className =
+                        "status off";
+
+                    card.dataset.enabled =
+                        "false";
+
+                }
+
+            });
+
+        })
+
+        .catch(function(error) {
+
+            console.log(
+                "Firebase error:",
+                error
+            );
+
+
+            const statuses =
+                document.querySelectorAll(
+                    ".status"
+                );
+
+
+            statuses.forEach(function(status) {
+
+                status.textContent =
+                    "ERROR";
+
+                status.className =
+                    "status off";
+
+            });
+
+        });
+
+
+    function openSection(card) {
+
+        const enabled =
+            card.dataset.enabled;
+
+        const link =
+            card.getAttribute(
+                "data-link"
+            );
+
+
+        if (
+            enabled === "true" &&
+            link !== ""
+        ) {
+
+            window.location.href =
+                link;
+
+            return;
+
+        }
+
+
+        if (
+            enabled === "false"
+        ) {
+
+            alert(
+                "هذا القسم مغلق حالياً"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            enabled === "true" &&
+            link === ""
+        ) {
+
+            alert(
+                "صفحة هذا القسم قيد الإنشاء"
+            );
+
+            return;
+
+        }
+
+    }
+
+</script>
+
 
 </body>
+
 </html>
