@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>الألبسة الرياضية - Bazaro</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: white;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: #2563eb;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .back {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 50px 15px 30px;
+        }
+
+        .page-title h1 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .page-title p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .sections {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px 20px;
+            text-align: center;
+
+            text-decoration: none;
+            color: #222;
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.1);
+
+            transition: 0.2s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 5px 14px rgba(0,0,0,0.15);
+        }
+
+        .section-icon {
+            font-size: 65px;
+            margin-bottom: 18px;
+        }
+
+        .section-card h2 {
+            font-size: 21px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .back {
+                font-size: 14px;
+            }
+
+            .page-title {
+                padding: 40px 15px 20px;
+            }
+
+            .page-title h1 {
+                font-size: 28px;
+            }
+
+            .page-title p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .sections {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+
+            .section-card {
+                padding: 30px 15px;
+            }
+
+            .section-icon {
+                font-size: 60px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        Bazaro
+    </div>
+
+    <a href="index.html"
+       class="back">
+
+        ← الأقسام الرئيسية
+
+    </a>
+
+</header>
+
+
+<section class="page-title">
+
+    <h1>
+        🏃 الألبسة الرياضية
+    </h1>
+
+    <p>
+        اختر القسم الرياضي الذي تريد تصفحه
+    </p>
+
+</section>
+
+
+<section class="sections">
+
+
+    <a href="sports-men.html"
+       class="section-card">
+
+        <div class="section-icon">
+            👕
+        </div>
+
+        <h2>
+            ملابس رياضية رجالية
+        </h2>
+
+    </a>
+
+
+    <a href="sports-women.html"
+       class="section-card">
+
+        <div class="section-icon">
+            👚
+        </div>
+
+        <h2>
+            ملابس رياضية نسائية
+        </h2>
+
+    </a>
+
+
+    <a href="sports-suits.html"
+       class="section-card">
+
+        <div class="section-icon">
+            🧥
+        </div>
+
+        <h2>
+            بدلات رياضية
+        </h2>
+
+    </a>
+
+
+    <a href="sports-tshirts.html"
+       class="section-card">
+
+        <div class="section-icon">
+            👕
+        </div>
+
+        <h2>
+            تيشيرتات رياضية
+        </h2>
+
+    </a>
+
+
+    <a href="sports-shorts.html"
+       class="section-card">
+
+        <div class="section-icon">
+            🏃
+        </div>
+
+        <h2>
+            شورتات رياضية
+        </h2>
+
+    </a>
+
+
+    <a href="sports-shoes.html"
+       class="section-card">
+
+        <div class="section-icon">
+            👟
+        </div>
+
+        <h2>
+            أحذية رياضية
+        </h2>
+
+    </a>
+
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Bazaro - جميع الحقوق محفوظة
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
