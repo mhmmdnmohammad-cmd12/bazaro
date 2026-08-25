@@ -2,140 +2,323 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bazaro - جاكيتات نسائية</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>جاكيتات نسائية - Bazaro</title>
 
     <style>
-        body {
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+        }
+
+        body {
             background: #f5f5f5;
             color: #222;
         }
 
         header {
-            background: #ff4f81;
-            color: white;
-            padding: 20px;
-            text-align: center;
+            background: white;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            margin: 0;
+        .logo {
+            color: #2563eb;
             font-size: 28px;
+            font-weight: bold;
         }
 
-        header p {
-            margin: 8px 0 0;
+        .back {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
         }
 
-        .container {
-            max-width: 1000px;
+        .page-title {
+            text-align: center;
+            padding: 50px 15px 30px;
+        }
+
+        .page-title h1 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .page-title p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .content {
+            max-width: 900px;
             margin: auto;
             padding: 20px;
         }
 
-        .back {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 18px;
-            background: #222;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
         }
 
         .product {
             background: white;
-            padding: 20px;
-            border-radius: 15px;
+
+            border-radius: 16px;
+
+            padding: 35px 20px;
+
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.1);
+
             text-decoration: none;
+
             color: #222;
+
             display: block;
+
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 6px 15px rgba(0,0,0,0.15);
         }
 
         .product-icon {
-            font-size: 55px;
-            margin-bottom: 10px;
+            font-size: 65px;
+            margin-bottom: 15px;
         }
 
         .product h2 {
-            font-size: 18px;
-            margin: 8px 0;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .product p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
 
         .status {
             display: inline-block;
-            margin-top: 5px;
-            padding: 5px 12px;
+
+            padding: 6px 14px;
+
             border-radius: 20px;
-            background: #eee;
-            color: #777;
+
+            background: #f3f4f6;
+
+            color: #666;
+
             font-size: 14px;
         }
 
         footer {
-            margin-top: 30px;
+            margin-top: 50px;
+
+            background: #222;
+
+            color: white;
+
             text-align: center;
-            padding: 20px;
-            color: #777;
+
+            padding: 25px;
         }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .back {
+                font-size: 14px;
+            }
+
+            .page-title {
+                padding: 40px 15px 20px;
+            }
+
+            .page-title h1 {
+                font-size: 28px;
+            }
+
+            .page-title p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .product {
+                padding: 30px 15px;
+            }
+
+            .product-icon {
+                font-size: 60px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1>🧥 Bazaro</h1>
-        <p>جاكيتات نسائية</p>
-    </header>
 
-    <div class="container">
+<header>
 
-        <a href="women-jackets.html" class="back">
-            ⬅ العودة إلى جاكيتات ومعاطف نسائية
+    <div class="logo">
+        Bazaro
+    </div>
+
+    <a href="women-jackets.html"
+       class="back">
+
+        ← جاكيتات ومعاطف نسائية
+
+    </a>
+
+</header>
+
+
+<section class="page-title">
+
+    <h1>
+        🧥 جاكيتات نسائية
+    </h1>
+
+    <p>
+        اختر نوع الجاكيتات الذي تريد تصفحه
+    </p>
+
+</section>
+
+
+<section class="content">
+
+    <div class="products">
+
+
+        <!-- جاكيتات جلدية -->
+
+        <a href="women-leather-jackets.html"
+           class="product">
+
+            <div class="product-icon">
+                🧥
+            </div>
+
+            <h2>
+                جاكيتات جلدية
+            </h2>
+
+            <p>
+                جاكيتات جلدية نسائية
+            </p>
+
+            <span class="status">
+                قريبًا
+            </span>
+
         </a>
 
-        <div class="products">
 
-            <!-- جاكيتات جلدية -->
-            <a href="women-leather-jackets.html" class="product">
-                <div class="product-icon">🧥</div>
-                <h2>جاكيتات جلدية</h2>
-                <span class="status">قريبًا</span>
-            </a>
+        <!-- جاكيتات جينز -->
 
-            <!-- جاكيتات جينز -->
-            <a href="women-denim-jackets.html" class="product">
-                <div class="product-icon">👖</div>
-                <h2>جاكيتات جينز</h2>
-                <span class="status">قريبًا</span>
-            </a>
+        <a href="women-denim-jackets.html"
+           class="product">
 
-            <!-- جاكيتات رسمية -->
-            <a href="women-formal-jackets.html" class="product">
-                <div class="product-icon">🧥</div>
-                <h2>جاكيتات رسمية</h2>
-                <span class="status">قريبًا</span>
-            </a>
+            <div class="product-icon">
+                👖
+            </div>
 
-        </div>
+            <h2>
+                جاكيتات جينز
+            </h2>
+
+            <p>
+                جاكيتات جينز نسائية
+            </p>
+
+            <span class="status">
+                قريبًا
+            </span>
+
+        </a>
+
+
+        <!-- جاكيتات رسمية -->
+
+        <a href="women-formal-jackets.html"
+           class="product">
+
+            <div class="product-icon">
+                🧥
+            </div>
+
+            <h2>
+                جاكيتات رسمية
+            </h2>
+
+            <p>
+                جاكيتات رسمية نسائية
+            </p>
+
+            <span class="status">
+                قريبًا
+            </span>
+
+        </a>
+
 
     </div>
 
-    <footer>
-        © 2026 Bazaro
-    </footer>
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Bazaro - جميع الحقوق محفوظة
+    </p>
+
+</footer>
+
 
 </body>
 
