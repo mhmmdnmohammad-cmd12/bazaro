@@ -8,8 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Bazaro - الألبسة النسائية</title>
-
+    <title>Bazaro - المكياج</title>
 
     <style>
 
@@ -66,7 +65,7 @@
         }
 
 
-        /* رأس قسم الألبسة النسائية */
+        /* رأس قسم المكياج */
 
         header {
 
@@ -96,9 +95,9 @@
         }
 
 
-        /* حالة القسم الرئيسي */
+        /* حالة القسم */
 
-        .main-status {
+        .status {
 
             display: inline-block;
 
@@ -323,25 +322,23 @@
 
 
 
-    <!-- رأس القسم -->
+    <!-- رأس قسم المكياج -->
 
     <header>
 
 
         <h1>
-            👗 Bazaro
+            💄 Bazaro
         </h1>
 
 
         <p>
-            قسم الألبسة النسائية
+            قسم المكياج
         </p>
 
 
-        <!-- حالة القسم الرئيسي فقط -->
-
-        <span id="women-status"
-              class="main-status">
+        <span id="makeup-status"
+              class="status">
 
             جاري التحميل...
 
@@ -360,102 +357,136 @@
         <div class="categories">
 
 
-            <!-- الفساتين -->
+            <!-- أحمر الشفاه -->
 
-            <a href="women-dresses.html"
+            <a href="makeup-lipstick.html"
                class="category">
 
                 <div class="icon">
-                    👗
+                    💄
                 </div>
 
                 <h2>
-                    الفساتين
+                    أحمر الشفاه
                 </h2>
 
             </a>
 
 
 
-            <!-- القمصان والبلوزات -->
+            <!-- مكياج العيون -->
 
-            <a href="women-shirts.html"
+            <a href="makeup-eyes.html"
                class="category">
 
                 <div class="icon">
-                    👚
+                    👁️
                 </div>
 
                 <h2>
-                    القمصان والبلوزات
+                    مكياج العيون
                 </h2>
 
             </a>
 
 
 
-            <!-- البناطيل -->
+            <!-- كريم الأساس والكونسيلر -->
 
-            <a href="women-pants.html"
+            <a href="makeup-foundation.html"
                class="category">
 
                 <div class="icon">
-                    👖
+                    🧴
                 </div>
 
                 <h2>
-                    البناطيل
+                    كريم الأساس والكونسيلر
                 </h2>
 
             </a>
 
 
 
-            <!-- الجاكيتات والمعاطف -->
+            <!-- البودرة والبلاشر -->
 
-            <a href="women-jackets.html"
+            <a href="makeup-powder.html"
                class="category">
 
                 <div class="icon">
-                    🧥
+                    🌸
                 </div>
 
                 <h2>
-                    الجاكيتات والمعاطف
+                    البودرة والبلاشر
                 </h2>
 
             </a>
 
 
 
-            <!-- البدلات -->
+            <!-- فرش وأدوات المكياج -->
 
-            <a href="women-suits.html"
+            <a href="makeup-brushes.html"
                class="category">
 
                 <div class="icon">
-                    👔
+                    🖌️
                 </div>
 
                 <h2>
-                    البدلات
+                    فرش وأدوات المكياج
                 </h2>
 
             </a>
 
 
 
-            <!-- الجوارب -->
+            <!-- مكياج الأظافر -->
 
-            <a href="women-socks.html"
+            <a href="makeup-nails.html"
                class="category">
 
                 <div class="icon">
-                    🧦
+                    💅
                 </div>
 
                 <h2>
-                    الجوارب
+                    مكياج الأظافر
+                </h2>
+
+            </a>
+
+
+
+            <!-- الهايلايتر والكونتور -->
+
+            <a href="makeup-highlighter.html"
+               class="category">
+
+                <div class="icon">
+                    ✨
+                </div>
+
+                <h2>
+                    الهايلايتر والكونتور
+                </h2>
+
+            </a>
+
+
+
+            <!-- مزيلات المكياج -->
+
+            <a href="makeup-removers.html"
+               class="category">
+
+                <div class="icon">
+                    🧼
+                </div>
+
+                <h2>
+                    مزيلات المكياج
                 </h2>
 
             </a>
@@ -506,21 +537,19 @@
 
                 const status =
                     document.getElementById(
-                        "women-status"
+                        "makeup-status"
                     );
 
 
-                /* حالة الألبسة النسائية الرئيسية فقط */
-
                 if (
                     sections &&
-                    sections.women === true
+                    sections.makeup === true
                 ) {
 
                     status.textContent = "ON";
 
                     status.className =
-                        "main-status on";
+                        "status on";
 
                 }
 
@@ -529,7 +558,7 @@
                     status.textContent = "OFF";
 
                     status.className =
-                        "main-status off";
+                        "status off";
 
                 }
 
@@ -546,14 +575,14 @@
 
                 const status =
                     document.getElementById(
-                        "women-status"
+                        "makeup-status"
                     );
 
 
                 status.textContent = "ERROR";
 
                 status.className =
-                    "main-status error";
+                    "status error";
 
             });
 

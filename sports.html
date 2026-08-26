@@ -60,6 +60,43 @@
         .page-title p {
             color: #666;
             font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        /* حالة القسم الرئيسي */
+
+        .main-status {
+
+            display: inline-block;
+
+            padding: 6px 16px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .on {
+
+            background: #dcfce7;
+
+            color: #15803d;
+        }
+
+        .off {
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+        }
+
+        .error {
+
+            background: #fef3c7;
+
+            color: #92400e;
         }
 
         .sections {
@@ -187,6 +224,15 @@
         اختر القسم الرياضي الذي تريد تصفحه
     </p>
 
+    <!-- حالة القسم الرئيسي فقط -->
+
+    <span id="sports-status"
+          class="main-status">
+
+        جاري التحميل...
+
+    </span>
+
 </section>
 
 
@@ -287,6 +333,87 @@
     </p>
 
 </footer>
+
+
+<script>
+
+    const firebaseURL =
+        "https://bazaro-4f7d6-default-rtdb.europe-west1.firebasedatabase.app/sections.json";
+
+
+    fetch(firebaseURL)
+
+        .then(function(response) {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "HTTP " + response.status
+                );
+
+            }
+
+            return response.json();
+
+        })
+
+
+        .then(function(sections) {
+
+            const status =
+                document.getElementById(
+                    "sports-status"
+                );
+
+
+            /* حالة الألبسة الرياضية الرئيسية فقط */
+
+            if (
+                sections &&
+                sections.sports === true
+            ) {
+
+                status.textContent = "ON";
+
+                status.className =
+                    "main-status on";
+
+            }
+
+            else {
+
+                status.textContent = "OFF";
+
+                status.className =
+                    "main-status off";
+
+            }
+
+        })
+
+
+        .catch(function(error) {
+
+            console.log(
+                "Sections error:",
+                error
+            );
+
+
+            const status =
+                document.getElementById(
+                    "sports-status"
+                );
+
+
+            status.textContent = "ERROR";
+
+            status.className =
+                "main-status error";
+
+        });
+
+</script>
 
 
 </body>

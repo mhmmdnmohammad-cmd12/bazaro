@@ -455,7 +455,7 @@
         <div
             class="category"
             data-section="makeup"
-            data-link=""
+            data-link="makeup.html"
             onclick="openSection(this)"
         >
 
@@ -597,6 +597,7 @@
 
         })
 
+
         .then(function(sections) {
 
             const cards =
@@ -611,6 +612,7 @@
                     card.getAttribute(
                         "data-section"
                     );
+
 
                 const status =
                     card.querySelector(
@@ -651,6 +653,7 @@
 
         })
 
+
         .catch(function(error) {
 
             console.log(
@@ -678,10 +681,12 @@
         });
 
 
+
     function openSection(card) {
 
         const enabled =
             card.dataset.enabled;
+
 
         const link =
             card.getAttribute(
