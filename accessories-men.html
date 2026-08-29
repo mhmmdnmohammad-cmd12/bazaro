@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    
+    <title>إكسسوارات رجالية - Bazaro</title>
+    
+    <style>
+    
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+    
+        header {
+            background: white;
+            padding: 18px 25px;
+    
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    
+        .logo {
+            color: #2563eb;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    
+        .back {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+    
+        .page-title {
+            text-align: center;
+            padding: 50px 15px 30px;
+        }
+    
+        .page-title h1 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+    
+        .page-title p {
+            color: #666;
+            font-size: 17px;
+        }
+    
+        /* منطقة المنتجات */
+    
+        .products-container {
+    
+            max-width: 1100px;
+    
+            margin: auto;
+    
+            padding: 20px;
+        }
+    
+        .products-grid {
+    
+            display: grid;
+    
+            grid-template-columns:
+                repeat(3, 1fr);
+    
+            gap: 20px;
+        }
+    
+        /* بطاقة المنتج */
+    
+        .product-card {
+    
+            background: white;
+    
+            border-radius: 16px;
+    
+            padding: 20px;
+    
+            text-align: center;
+    
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.1);
+        }
+    
+        .product-image {
+    
+            width: 100%;
+    
+            height: 220px;
+    
+            background: #f1f1f1;
+    
+            border-radius: 12px;
+    
+            display: flex;
+    
+            align-items: center;
+    
+            justify-content: center;
+    
+            color: #999;
+    
+            font-size: 16px;
+    
+            margin-bottom: 15px;
+        }
+    
+        .product-card h2 {
+    
+            font-size: 20px;
+    
+            margin-bottom: 8px;
+        }
+    
+        .product-price {
+    
+            color: #2563eb;
+    
+            font-size: 18px;
+    
+            font-weight: bold;
+        }
+    
+        /* رسالة عدم وجود منتجات */
+    
+        .no-products {
+    
+            background: white;
+    
+            border-radius: 16px;
+    
+            padding: 50px 20px;
+    
+            text-align: center;
+    
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.1);
+    
+            color: #666;
+        }
+    
+        .no-products-icon {
+    
+            font-size: 55px;
+    
+            margin-bottom: 15px;
+        }
+    
+        .no-products h2 {
+    
+            font-size: 22px;
+    
+            margin-bottom: 10px;
+    
+            color: #333;
+        }
+    
+        .no-products p {
+    
+            font-size: 16px;
+    
+            line-height: 1.7;
+        }
+    
+        footer {
+    
+            margin-top: 50px;
+    
+            background: #222;
+    
+            color: white;
+    
+            text-align: center;
+    
+            padding: 25px;
+        }
+    
+        @media (max-width: 900px) {
+    
+            .products-grid {
+    
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+    
+        }
+    
+        @media (max-width: 700px) {
+    
+            header {
+                padding: 15px;
+            }
+    
+            .logo {
+                font-size: 24px;
+            }
+    
+            .page-title {
+                padding: 40px 15px 20px;
+            }
+    
+            .page-title h1 {
+                font-size: 28px;
+            }
+    
+            .page-title p {
+                font-size: 15px;
+    
+                line-height: 1.6;
+            }
+    
+            .products-container {
+    
+                padding: 15px;
+            }
+    
+            .products-grid {
+    
+                grid-template-columns: 1fr;
+    
+                gap: 15px;
+            }
+    
+            .product-card {
+    
+                padding: 15px;
+            }
+    
+            .product-image {
+    
+                height: 220px;
+            }
+    
+        }
+    
+    </style>
+    
+    </head><body><header><div class="logo">
+        Bazaro
+    </div>
+    
+    <a href="accessories.html"
+       class="back">
+    
+        ← الإكسسوارات
+    
+    </a>
+    
+    </header><section class="page-title"><h1>
+        🧿 إكسسوارات رجالية
+    </h1>
+    
+    <p>
+        اكتشف مجموعة الإكسسوارات الرجالية
+    </p>
+    
+    </section><section class="products-container"><div class="products-grid">
+    
+    
+        <!--
+            المنتجات ستظهر هنا لاحقًا
+            من نظام المتاجر و Firebase
+        -->
+    
+    
+        <div class="no-products">
+    
+            <div class="no-products-icon">
+                🛍️
+            </div>
+    
+            <h2>
+                لا توجد منتجات حاليًا
+            </h2>
+    
+            <p>
+                سيتم عرض المنتجات هنا
+                عند توفرها من المتاجر.
+            </p>
+    
+        </div>
+    
+    
+    </div>
+    
+    </section><footer><p>
+        © 2026 Bazaro - جميع الحقوق محفوظة
+    </p>
+    
+    </footer></body></html>

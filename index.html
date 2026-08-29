@@ -1,743 +1,714 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-
-    <meta charset="UTF-8">
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-
+    
     <title>Bazaro</title>
-
+    
     <style>
-
+    
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
-
+    
         body {
             background: #f5f5f5;
             color: #222;
         }
-
+    
         header {
             background: white;
             padding: 18px 25px;
-
+    
             display: flex;
             justify-content: space-between;
             align-items: center;
-
+    
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
+    
         .logo {
             font-size: 28px;
             font-weight: bold;
             color: #2563eb;
         }
-
+    
         nav {
             display: flex;
             gap: 20px;
         }
-
+    
         nav a {
             text-decoration: none;
             color: #333;
         }
-
+    
         nav a:hover {
             color: #2563eb;
         }
-
+    
         .hero {
             text-align: center;
             padding: 70px 20px;
-
+    
             background:
                 linear-gradient(
                     135deg,
                     #2563eb,
                     #60a5fa
                 );
-
+    
             color: white;
         }
-
+    
         .hero h1 {
             font-size: 42px;
             margin-bottom: 15px;
         }
-
+    
         .hero p {
             font-size: 20px;
             margin-bottom: 25px;
         }
-
+    
         .search {
             width: 90%;
             max-width: 600px;
-
+    
             padding: 15px;
-
+    
             border: none;
             border-radius: 10px;
-
+    
             font-size: 16px;
-
+    
             outline: none;
         }
-
+    
         .categories {
             padding: 40px 20px;
             text-align: center;
         }
-
+    
         .categories h2 {
             margin-bottom: 25px;
             font-size: 28px;
         }
-
+    
         .category-container {
-
+    
             max-width: 1100px;
-
+    
             margin: auto;
-
+    
             display: grid;
-
+    
             grid-template-columns:
                 repeat(3, 1fr);
-
+    
             gap: 20px;
         }
-
+    
         .category {
-
+    
             background: white;
-
+    
             padding: 25px 15px;
-
+    
             border-radius: 15px;
-
+    
             box-shadow:
                 0 2px 8px rgba(0,0,0,0.1);
-
+    
             text-decoration: none;
-
+    
             color: inherit;
-
+    
             display: block;
-
+    
             transition: 0.3s;
-
+    
             cursor: pointer;
         }
-
+    
         .category:hover {
-
+    
             transform:
                 translateY(-4px);
-
+    
             box-shadow:
                 0 6px 15px rgba(0,0,0,0.15);
         }
-
+    
         .category-icon {
-
+    
             font-size: 42px;
-
+    
             margin-bottom: 10px;
         }
-
+    
         .category h3 {
-
+    
             font-size: 19px;
-
+    
             margin-bottom: 15px;
         }
-
+    
         .status {
-
+    
             display: inline-block;
-
+    
             padding: 6px 15px;
-
+    
             border-radius: 20px;
-
+    
             font-size: 13px;
-
+    
             font-weight: bold;
         }
-
+    
         .on {
-
+    
             background: #dcfce7;
-
+    
             color: #15803d;
         }
-
+    
         .off {
-
+    
             background: #fee2e2;
-
+    
             color: #b91c1c;
         }
-
+    
         .loading {
-
+    
             background: #f3f4f6;
-
+    
             color: #666;
         }
-
+    
         .subcategories {
-
+    
             display: flex;
-
+    
             justify-content: center;
-
+    
             flex-wrap: wrap;
-
+    
             gap: 8px;
-
+    
             margin-top: 15px;
         }
-
+    
         .subcategory {
-
+    
             background: #f3f4f6;
-
+    
             padding: 8px 12px;
-
+    
             border-radius: 8px;
-
+    
             font-size: 13px;
         }
-
+    
         @media (max-width: 700px) {
-
+    
             header {
-
+    
                 flex-direction: column;
-
+    
                 gap: 15px;
-
+    
                 padding: 15px;
             }
-
+    
             .logo {
-
+    
                 font-size: 25px;
             }
-
+    
             nav {
-
+    
                 gap: 12px;
-
+    
                 flex-wrap: wrap;
-
+    
                 justify-content: center;
             }
-
+    
             nav a {
-
+    
                 font-size: 14px;
             }
-
+    
             .hero {
-
+    
                 padding: 50px 15px;
             }
-
+    
             .hero h1 {
-
+    
                 font-size: 30px;
             }
-
+    
             .hero p {
-
+    
                 font-size: 17px;
-
+    
                 line-height: 1.6;
             }
-
+    
             .search {
-
+    
                 width: 100%;
             }
-
+    
             .categories {
-
+    
                 padding: 30px 12px;
             }
-
+    
             .category-container {
-
+    
                 grid-template-columns:
                     repeat(2, 1fr);
-
+    
                 gap: 12px;
             }
-
+    
             .category {
-
+    
                 padding: 20px 8px;
             }
-
+    
             .category-icon {
-
+    
                 font-size: 32px;
             }
-
+    
             .category h3 {
-
+    
                 font-size: 16px;
             }
-
+    
             .subcategory {
-
+    
                 font-size: 12px;
-
+    
                 padding: 7px 8px;
             }
         }
-
+    
         @media (max-width: 360px) {
-
+    
             .category-container {
-
+    
                 grid-template-columns: 1fr;
             }
         }
-
+    
     </style>
-
-</head>
-
-
-<body>
-
-
-<header>
-
-    <div class="logo">
+    
+    </head><body><header><div class="logo">
         Bazaro
     </div>
-
+    
     <nav>
-
+    
         <a href="index.html">
             الرئيسية
         </a>
-
+    
         <a href="#">
             المتاجر
         </a>
-
+    
         <a href="#">
             تسجيل الدخول
         </a>
-
+    
     </nav>
-
-</header>
-
-
-<section class="hero">
-
-    <h1>
+    
+    </header><section class="hero"><h1>
         مرحباً بك في Bazaro
     </h1>
-
+    
     <p>
         منصتك للتسوق من المتاجر في دمشق
     </p>
-
+    
     <input
         type="text"
         class="search"
         placeholder="ابحث عن منتج أو متجر..."
     >
-
-</section>
-
-
-<section class="categories">
-
-    <h2>
+    
+    </section><section class="categories"><h2>
         الأقسام
     </h2>
-
-
+    
+    
     <div class="category-container">
-
-
+    
+    
         <!-- ألبسة رجالية -->
-
+    
         <div
             class="category"
             data-section="men"
             data-link="men.html"
             onclick="openSection(this)"
         >
-
+    
             <div class="category-icon">
                 👔
             </div>
-
+    
             <h3>
                 ألبسة رجالية
             </h3>
-
+    
             <span class="status loading">
                 جاري التحميل...
             </span>
-
+    
         </div>
-
-
+    
+    
         <!-- ألبسة نسائية -->
-
+    
         <div
             class="category"
             data-section="women"
             data-link="women.html"
             onclick="openSection(this)"
         >
-
+    
             <div class="category-icon">
                 👗
             </div>
-
+    
             <h3>
                 ألبسة نسائية
             </h3>
-
+    
             <span class="status loading">
                 جاري التحميل...
             </span>
-
+    
         </div>
-
-
+    
+    
         <!-- ألبسة رياضية -->
-
+    
         <div
             class="category"
             data-section="sports"
             data-link="sports.html"
             onclick="openSection(this)"
         >
-
+    
             <div class="category-icon">
                 🏃
             </div>
-
+    
             <h3>
                 ألبسة رياضية
             </h3>
-
+    
             <span class="status loading">
                 جاري التحميل...
             </span>
-
+    
         </div>
-
-
+    
+    
         <!-- مكياج -->
-
+    
         <div
             class="category"
             data-section="makeup"
             data-link="makeup.html"
             onclick="openSection(this)"
         >
-
+    
             <div class="category-icon">
                 💄
             </div>
-
+    
             <h3>
                 مكياج
             </h3>
-
+    
             <span class="status loading">
                 جاري التحميل...
             </span>
-
+    
         </div>
-
-
+    
+    
         <!-- إكسسوارات -->
-
+    
         <div
             class="category"
             data-section="accessories"
-            data-link=""
+            data-link="accessories.html"
             onclick="openSection(this)"
         >
-
+    
             <div class="category-icon">
                 💍
             </div>
-
+    
             <h3>
                 إكسسوارات
             </h3>
-
+    
             <span class="status loading">
                 جاري التحميل...
             </span>
-
+    
         </div>
-
-
+    
+    
         <!-- الموبايلات -->
-
+    
         <div
             class="category"
             data-section="mobile"
             data-link="mobiles.html"
             onclick="openSection(this)"
         >
-
+    
             <div class="category-icon">
                 📱
             </div>
-
+    
             <h3>
                 الموبايلات
             </h3>
-
+    
             <span class="status loading">
                 جاري التحميل...
             </span>
-
+    
+    
             <div class="subcategories">
-
+    
                 <div class="subcategory">
                     📱 أجهزة الموبايل
                 </div>
-
+    
                 <div class="subcategory">
                     🔌 إكسسوارات الموبايل
                 </div>
-
+    
             </div>
-
+    
         </div>
-
-
+    
+    
         <!-- اللابتوبات -->
-
+    
         <div
             class="category"
             data-section="laptops"
             data-link="laptops.html"
             onclick="openSection(this)"
         >
-
+    
             <div class="category-icon">
                 💻
             </div>
-
+    
             <h3>
                 اللابتوبات
             </h3>
-
+    
             <span class="status loading">
                 جاري التحميل...
             </span>
-
+    
+    
             <div class="subcategories">
-
+    
                 <div class="subcategory">
                     💻 أجهزة اللابتوب
                 </div>
-
+    
                 <div class="subcategory">
                     🎒 إكسسوارات اللابتوب
                 </div>
-
+    
             </div>
-
+    
         </div>
-
-
+    
+    
     </div>
-
-</section>
-
-
-<script>
-
-    const firebaseURL =
-        "https://bazaro-4f7d6-default-rtdb.europe-west1.firebasedatabase.app/sections.json";
-
-
-    fetch(firebaseURL)
-
-        .then(function(response) {
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "HTTP " + response.status
-                );
-
-            }
-
-            return response.json();
-
-        })
-
-
-        .then(function(sections) {
-
-            const cards =
-                document.querySelectorAll(
-                    "[data-section]"
-                );
-
-
-            cards.forEach(function(card) {
-
-                const sectionName =
-                    card.getAttribute(
-                        "data-section"
+    
+    </section><script>
+    
+        const firebaseURL =
+            "https://bazaro-4f7d6-default-rtdb.europe-west1.firebasedatabase.app/sections.json";
+    
+    
+        fetch(firebaseURL)
+    
+            .then(function(response) {
+    
+                if (!response.ok) {
+    
+                    throw new Error(
+                        "HTTP " + response.status
                     );
-
-
-                const status =
-                    card.querySelector(
+    
+                }
+    
+                return response.json();
+    
+            })
+    
+    
+            .then(function(sections) {
+    
+                const cards =
+                    document.querySelectorAll(
+                        "[data-section]"
+                    );
+    
+    
+                cards.forEach(function(card) {
+    
+                    const sectionName =
+                        card.getAttribute(
+                            "data-section"
+                        );
+    
+    
+                    const status =
+                        card.querySelector(
+                            ".status"
+                        );
+    
+    
+                    if (
+                        sections &&
+                        sections[sectionName] === true
+                    ) {
+    
+                        status.textContent =
+                            "ON";
+    
+                        status.className =
+                            "status on";
+    
+                        card.dataset.enabled =
+                            "true";
+    
+                    }
+    
+                    else {
+    
+                        status.textContent =
+                            "OFF";
+    
+                        status.className =
+                            "status off";
+    
+                        card.dataset.enabled =
+                            "false";
+    
+                    }
+    
+                });
+    
+            })
+    
+    
+            .catch(function(error) {
+    
+                console.log(
+                    "Firebase error:",
+                    error
+                );
+    
+    
+                const statuses =
+                    document.querySelectorAll(
                         ".status"
                     );
-
-
-                if (
-                    sections &&
-                    sections[sectionName] === true
-                ) {
-
+    
+    
+                statuses.forEach(function(status) {
+    
                     status.textContent =
-                        "ON";
-
-                    status.className =
-                        "status on";
-
-                    card.dataset.enabled =
-                        "true";
-
-                }
-
-                else {
-
-                    status.textContent =
-                        "OFF";
-
+                        "ERROR";
+    
                     status.className =
                         "status off";
-
-                    card.dataset.enabled =
-                        "false";
-
-                }
-
+    
+                });
+    
             });
-
-        })
-
-
-        .catch(function(error) {
-
-            console.log(
-                "Firebase error:",
-                error
-            );
-
-
-            const statuses =
-                document.querySelectorAll(
-                    ".status"
+    
+    
+    
+        function openSection(card) {
+    
+            const enabled =
+                card.dataset.enabled;
+    
+    
+            const link =
+                card.getAttribute(
+                    "data-link"
                 );
-
-
-            statuses.forEach(function(status) {
-
-                status.textContent =
-                    "ERROR";
-
-                status.className =
-                    "status off";
-
-            });
-
-        });
-
-
-
-    function openSection(card) {
-
-        const enabled =
-            card.dataset.enabled;
-
-
-        const link =
-            card.getAttribute(
-                "data-link"
-            );
-
-
-        if (
-            enabled === "true" &&
-            link !== ""
-        ) {
-
-            window.location.href =
-                link;
-
-            return;
-
+    
+    
+            if (
+                enabled === "true" &&
+                link !== ""
+            ) {
+    
+                window.location.href =
+                    link;
+    
+                return;
+    
+            }
+    
+    
+            if (
+                enabled === "false"
+            ) {
+    
+                alert(
+                    "هذا القسم مغلق حالياً"
+                );
+    
+                return;
+    
+            }
+    
+    
+            if (
+                enabled === "true" &&
+                link === ""
+            ) {
+    
+                alert(
+                    "صفحة هذا القسم قيد الإنشاء"
+                );
+    
+                return;
+    
+            }
+    
         }
-
-
-        if (
-            enabled === "false"
-        ) {
-
-            alert(
-                "هذا القسم مغلق حالياً"
-            );
-
-            return;
-
-        }
-
-
-        if (
-            enabled === "true" &&
-            link === ""
-        ) {
-
-            alert(
-                "صفحة هذا القسم قيد الإنشاء"
-            );
-
-            return;
-
-        }
-
-    }
-
-</script>
-
-
-</body>
-
-</html>
+    
+    </script></body></html>

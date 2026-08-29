@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    
+    <title>الإكسسوارات - Bazaro</title>
+    
+    <style>
+    
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+    
+        header {
+            background: white;
+            padding: 18px 25px;
+    
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    
+        .logo {
+            color: #2563eb;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    
+        .back {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+    
+        .page-title {
+            text-align: center;
+            padding: 50px 15px 30px;
+        }
+    
+        .page-title h1 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+    
+        .page-title p {
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+    
+        .status {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    
+        .on {
+            background: #dcfce7;
+            color: #15803d;
+        }
+    
+        .off {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+    
+        .error {
+            background: #fef3c7;
+            color: #92400e;
+        }
+    
+        .accessories-sections {
+    
+            max-width: 900px;
+    
+            margin: auto;
+    
+            padding: 20px;
+    
+            display: grid;
+    
+            grid-template-columns: repeat(2, 1fr);
+    
+            gap: 25px;
+        }
+    
+        .accessories-section {
+    
+            background: white;
+    
+            border-radius: 16px;
+    
+            padding: 35px 20px;
+    
+            text-align: center;
+    
+            text-decoration: none;
+    
+            color: #222;
+    
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.1);
+    
+            transition: 0.3s;
+        }
+    
+        .accessories-section:hover {
+    
+            transform: translateY(-5px);
+    
+            box-shadow:
+                0 6px 18px rgba(0,0,0,0.15);
+        }
+    
+        .section-icon {
+    
+            font-size: 60px;
+    
+            margin-bottom: 20px;
+        }
+    
+        .accessories-section h2 {
+    
+            font-size: 22px;
+    
+            margin-bottom: 15px;
+        }
+    
+        footer {
+    
+            margin-top: 50px;
+    
+            background: #222;
+    
+            color: white;
+    
+            text-align: center;
+    
+            padding: 25px;
+        }
+    
+        @media (max-width: 700px) {
+    
+            header {
+                padding: 15px;
+            }
+    
+            .logo {
+                font-size: 24px;
+            }
+    
+            .page-title {
+                padding: 40px 15px 20px;
+            }
+    
+            .page-title h1 {
+                font-size: 28px;
+            }
+    
+            .page-title p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+    
+            .accessories-sections {
+    
+                grid-template-columns: 1fr;
+    
+                padding: 15px;
+    
+                gap: 15px;
+            }
+    
+            .accessories-section {
+    
+                padding: 30px 15px;
+            }
+    
+            .section-icon {
+    
+                font-size: 55px;
+            }
+    
+            .accessories-section h2 {
+    
+                font-size: 20px;
+            }
+    
+        }
+    
+    </style>
+    
+    </head><body><header><div class="logo">
+        Bazaro
+    </div>
+    
+    <a href="index.html"
+       class="back">
+    
+        ← الرئيسية
+    
+    </a>
+    
+    </header><section class="page-title"><h1>
+        👜 الإكسسوارات
+    </h1>
+    
+    <p>
+        اختر القسم الذي تريد تصفحه
+    </p>
+    
+    <span id="accessories-status"
+          class="status">
+    
+        جاري التحميل...
+    
+    </span>
+    
+    </section><section class="accessories-sections"><!-- إكسسوارات نسائية -->
+    
+    <a href="accessories-women.html"
+       class="accessories-section">
+    
+        <div class="section-icon">
+            💍
+        </div>
+    
+        <h2>
+            إكسسوارات نسائية
+        </h2>
+    
+    </a>
+    
+    
+    <!-- إكسسوارات رجالية -->
+    
+    <a href="accessories-men.html"
+       class="accessories-section">
+    
+        <div class="section-icon">
+            🧿
+        </div>
+    
+        <h2>
+            إكسسوارات رجالية
+        </h2>
+    
+    </a>
+    
+    
+    <!-- الساعات -->
+    
+    <a href="accessories-watches.html"
+       class="accessories-section">
+    
+        <div class="section-icon">
+            ⌚
+        </div>
+    
+        <h2>
+            ساعات
+        </h2>
+    
+    </a>
+    
+    
+    <!-- الحقائب والمحافظ -->
+    
+    <a href="accessories-bags-wallets.html"
+       class="accessories-section">
+    
+        <div class="section-icon">
+            👜
+        </div>
+    
+        <h2>
+            حقائب ومحافظ
+        </h2>
+    
+    </a>
+    
+    
+    <!-- النظارات -->
+    
+    <a href="accessories-glasses.html"
+       class="accessories-section">
+    
+        <div class="section-icon">
+            🕶️
+        </div>
+    
+        <h2>
+            نظارات
+        </h2>
+    
+    </a>
+    
+    </section><footer><p>
+        © 2026 Bazaro - جميع الحقوق محفوظة
+    </p>
+    
+    </footer><script>
+    
+        const firebaseURL =
+            "https://bazaro-4f7d6-default-rtdb.europe-west1.firebasedatabase.app/sections.json";
+    
+    
+        fetch(firebaseURL)
+    
+            .then(function(response) {
+    
+                if (!response.ok) {
+    
+                    throw new Error(
+                        "HTTP " + response.status
+                    );
+    
+                }
+    
+                return response.json();
+    
+            })
+    
+            .then(function(sections) {
+    
+                const status =
+                    document.getElementById(
+                        "accessories-status"
+                    );
+    
+    
+                if (
+                    sections &&
+                    sections.accessories === true
+                ) {
+    
+                    status.textContent = "ON";
+    
+                    status.className =
+                        "status on";
+    
+                }
+    
+                else {
+    
+                    status.textContent = "OFF";
+    
+                    status.className =
+                        "status off";
+    
+                }
+    
+            })
+    
+            .catch(function(error) {
+    
+                console.log(
+                    "Sections error:",
+                    error
+                );
+    
+    
+                const status =
+                    document.getElementById(
+                        "accessories-status"
+                    );
+    
+    
+                status.textContent = "ERROR";
+    
+                status.className =
+                    "status error";
+    
+            });
+    
+    </script></body></html>
